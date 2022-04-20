@@ -4,19 +4,37 @@ using UnityEngine;
 
 public class PickupItem : MonoBehaviour
 {
-    private void Update()
+    bool canPickUp = false;
+
+    PlayerInventory playerInventory;
+
+    private void OnTriggerEnter(Collider other)
     {
-       
+        playerInventory = other.GetComponentInParent<PlayerInventory>();
+
+        if (playerInventory != null)
+        {
+            canPickUp = true;
+        }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        PlayerInventory playerInventory = other.GetComponentInParent<PlayerInventory>();
+        playerInventory = other.GetComponentInParent<PlayerInventory>();
 
-        if (playerInventory != null && Input.GetMouseButtonDown(0))
+        if (playerInventory != null)
+        {
+            canPickUp = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
         {
             playerInventory.ItemCollected();
             gameObject.SetActive(false);
         }
     }
+        
 }
