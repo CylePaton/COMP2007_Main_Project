@@ -30,7 +30,7 @@ public class PickupItem : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canPickUp)
         {
             playerInventory.ItemCollected();
             gameObject.SetActive(false);
