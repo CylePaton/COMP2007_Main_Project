@@ -6,6 +6,16 @@ public class BlueShrine : MonoBehaviour
 {
     bool canInteract = false;
 
+    public bool shrineActive = false;
+
+    [Header("This Shrine")]
+    [SerializeField] GameObject deactiveLight;
+    [SerializeField] GameObject activeLight;
+
+    [Header("TreeShrine")]
+    [SerializeField] GameObject mainDeactiveLight;
+    [SerializeField] GameObject mainActiveLight;
+
     PlayerInventory playerInventory;
 
     private void OnTriggerEnter(Collider other)
@@ -32,7 +42,13 @@ public class BlueShrine : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && canInteract && playerInventory.numberOfBlue >= 5)
         {
-            print("Give Blue Gem");
+            deactiveLight.SetActive(false);
+            mainDeactiveLight.SetActive(false);
+
+            activeLight.SetActive(true);
+            mainActiveLight.SetActive(true);
+
+            shrineActive = true;
         }
     }
 }

@@ -364,6 +364,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b121d56fc5ee2d045beed46b43dff331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deactiveLight: {fileID: 1940464032}
+  activeLight: {fileID: 2050480730}
+  mainDeactiveLight: {fileID: 217745536}
+  mainActiveLight: {fileID: 834580145}
 --- !u!1 &113739258
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +479,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fef4bfcd1d5bc4cbbe5e10958a5744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deactiveLight: {fileID: 179460243}
+  activeLight: {fileID: 836929270}
+  mainDeactiveLight: {fileID: 1977094403}
+  mainActiveLight: {fileID: 785938945}
 --- !u!1 &128574807
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +509,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128574807}
-  m_Text: '5 Blue Spirits to Activate
+  m_Text: '5 Water Spirits to Activate
 
     Press E to interact'
   m_OffsetZ: 0
@@ -3779,7 +3787,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314777369}
-  m_Text: '5 Yellow Spirits to Activate
+  m_Text: '5 Sun Spirits to Activate
 
     Press E to interact'
   m_OffsetZ: 0
@@ -3876,7 +3884,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341087289}
-  m_Text: '5 Green Spirits to Activate
+  m_Text: '5 Earth Spirits to Activate
 
     Press E to interact'
   m_OffsetZ: 0

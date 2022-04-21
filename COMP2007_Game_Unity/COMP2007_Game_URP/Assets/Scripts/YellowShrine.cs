@@ -6,6 +6,8 @@ public class YellowShrine : MonoBehaviour
 {
     bool canInteract = false;
 
+    public bool shrineActive = false;
+
     [Header("This Shrine")]
     [SerializeField] GameObject deactiveLight;
     [SerializeField] GameObject activeLight;
@@ -13,8 +15,6 @@ public class YellowShrine : MonoBehaviour
     [Header("TreeShrine")]
     [SerializeField] GameObject mainDeactiveLight;
     [SerializeField] GameObject mainActiveLight;
-
-
  
     PlayerInventory playerInventory;
 
@@ -47,6 +47,8 @@ public class YellowShrine : MonoBehaviour
 
             activeLight.SetActive(true);
             mainActiveLight.SetActive(true);
+
+            shrineActive = true;
         }
     }
 }
