@@ -49,6 +49,7 @@ public class YellowShrine : MonoBehaviour
             mainActiveLight.SetActive(true);
 
             shrineActive = true;
+
         }
     }
 }
