@@ -35,6 +35,7 @@ public class PlayerInventory : MonoBehaviour
     {
         numberOfBlue++;
         OnItemCollected.Invoke(this);
+   
     }
 
 }
