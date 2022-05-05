@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     float playerHeight = 2f;
+    
 
     [SerializeField] Transform orientation;
 
@@ -30,7 +31,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask groundMask;
     bool isGrounded;
     float groundDistance = 0.04f;
-
+    
+    [Header("Audio")]
+    [SerializeField] AudioSource footsteps;
+    bool playAudio;
+    
     Vector3 moveDirection;
     Vector3 slopeMoveDirection;
 
@@ -71,6 +76,16 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
+
+        /*if(isGrounded && footsteps.isPlaying == false && rb.velocity.x > 0 || rb.velocity.y > 0)
+        {
+            footsteps.Play();
+        }
+        else if(footsteps.isPlaying == true && rb.velocity.x == 0 && rb.velocity.y == 0)
+        {
+            footsteps.Stop();
+        }*/
+        
 
         slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
     }
@@ -120,15 +135,20 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && !OnSlope())
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
+            
         }
         else if(isGrounded && OnSlope())
         {
             rb.AddForce(slopeMoveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
 
+            
         }
         else if (!isGrounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier * airMultiplier, ForceMode.Acceleration);
+
+            
+
         }
     }
 }
