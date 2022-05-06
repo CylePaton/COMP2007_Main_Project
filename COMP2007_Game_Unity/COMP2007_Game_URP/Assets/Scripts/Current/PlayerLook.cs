@@ -20,8 +20,7 @@ public class PlayerLook : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        
     }
 
     private void Update()
@@ -29,12 +28,25 @@ public class PlayerLook : MonoBehaviour
         mouseX = Input.GetAxisRaw("Mouse X");
         mouseY = Input.GetAxisRaw("Mouse Y");
         
-        yRotation += mouseX * sensX * multiplier;
-        xRotation -= mouseY * sensY * multiplier;
-
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         
-        cam.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        orientation.transform.rotation = Quaternion.Euler(0, yRotation, 0);
+        
+        if(PauseMenu.gameIsPaused == false)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            
+            yRotation += mouseX * sensX * multiplier;
+            xRotation -= mouseY * sensY * multiplier;
+
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            cam.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+            orientation.transform.rotation = Quaternion.Euler(0, yRotation, 0);
+        }
+        if(PauseMenu.gameIsPaused == true)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        
     }
 }
