@@ -26,19 +26,22 @@ public class CatchSpirit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // This code might contain AI movement and a function that adds a spirit to the inv when hit an
+        //AI Movement, which randomly choose wether to move a random amount or rotate a random amount
         if(isWandering == false)
         {
             StartCoroutine(Wander());
         }
+        //Rotate right random amount
         if(isRotatingRight == true)
         {
             transform.Rotate(transform.up * Time.deltaTime * rotationSpeed);
         }
+        //Rotate left random amount
         if(isRotatingLeft == true)
         {
             transform.Rotate(transform.up * Time.deltaTime * -rotationSpeed);
         }
+        //Walk random amount
         if(isWalking == true)
         {
             rb.AddForce(transform.forward * movementSpeed);
@@ -47,6 +50,8 @@ public class CatchSpirit : MonoBehaviour
 
     IEnumerator Wander()
     {
+
+        //Getting a random range for each movement variable
         int rotationTime = Random.Range(1, 3);
         int rotationWait = Random.Range(1, 3);
         int rotationDirecion = Random.Range(1, 3);
@@ -55,15 +60,20 @@ public class CatchSpirit : MonoBehaviour
 
         isWandering = true;
 
+        //Wait a between 1 - 3 seconds
         yield return new WaitForSeconds(walkWait);
 
         isWalking = true;
 
+        //Walks for between 1 - 3 seconds
         yield return new WaitForSeconds(walkTime);
 
         isWalking = false;
 
+        //Wait between range to rotate
         yield return new WaitForSeconds(rotationWait);
+
+        // Depending on rotation direction, chooses a random amount to rotate left or right
 
         if(rotationDirecion == 1)
         {
