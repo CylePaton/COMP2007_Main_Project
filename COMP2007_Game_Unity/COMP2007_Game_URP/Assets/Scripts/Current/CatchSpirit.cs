@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class CatchSpirit : MonoBehaviour
 {
+    //Varaibles to hold speed values
     public float movementSpeed = 20f;
     public float rotationSpeed = 100f;
 
+    //bool variable for movement and rotation
     private bool isWandering = false;
     private bool isRotatingLeft = false;
     private bool isRotatingRight = false;
     private bool isWalking = false;
+
+    public bool hasMovement = false;
 
     Rigidbody rb;
     
@@ -26,26 +30,31 @@ public class CatchSpirit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //AI Movement, which randomly choose wether to move a random amount or rotate a random amount
-        if(isWandering == false)
+
+        if (hasMovement)
         {
-            StartCoroutine(Wander());
+            //AI Movement, which randomly choose wether to move a random amount or rotate a random amount
+            if(isWandering == false)
+            {
+                StartCoroutine(Wander());
+            }
+            //Rotate right random amount
+            if(isRotatingRight == true)
+            {
+                transform.Rotate(transform.up * Time.deltaTime * rotationSpeed);
+            }
+            //Rotate left random amount
+            if(isRotatingLeft == true)
+            {
+                transform.Rotate(transform.up * Time.deltaTime * -rotationSpeed);
+            }
+            //Walk random amount
+            if(isWalking == true)
+            {
+                rb.AddForce(transform.forward * movementSpeed);
+            }
         }
-        //Rotate right random amount
-        if(isRotatingRight == true)
-        {
-            transform.Rotate(transform.up * Time.deltaTime * rotationSpeed);
-        }
-        //Rotate left random amount
-        if(isRotatingLeft == true)
-        {
-            transform.Rotate(transform.up * Time.deltaTime * -rotationSpeed);
-        }
-        //Walk random amount
-        if(isWalking == true)
-        {
-            rb.AddForce(transform.forward * movementSpeed);
-        }
+        
     }
 
     IEnumerator Wander()

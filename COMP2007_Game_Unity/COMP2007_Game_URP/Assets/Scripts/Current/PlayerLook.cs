@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
+
+    [Header("Variables")]
     [SerializeField] private float sensX;
     [SerializeField] private float sensY;
 
+    [Header("GameObjects")]
     [SerializeField] Transform cam;
     [SerializeField] Transform orientation;
+
+    [Header("References")]
+    public GameComplete gameComplete;
 
     float mouseX;
     float mouseY;
@@ -30,7 +36,7 @@ public class PlayerLook : MonoBehaviour
         
         
         
-        if(PauseMenu.gameIsPaused == false)
+        if(PauseMenu.gameIsPaused == false && gameComplete.gameIsComplete == false)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -42,7 +48,7 @@ public class PlayerLook : MonoBehaviour
             cam.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
             orientation.transform.rotation = Quaternion.Euler(0, yRotation, 0);
         }
-        if(PauseMenu.gameIsPaused == true)
+        if(PauseMenu.gameIsPaused == true || gameComplete.gameIsComplete == true)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

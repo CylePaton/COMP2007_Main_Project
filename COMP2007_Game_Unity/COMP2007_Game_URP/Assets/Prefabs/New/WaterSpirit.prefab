@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 4
   rotationSpeed: 100
+  hasMovement: 1
   spiritColour: 2
 --- !u!54 &4425730554993004502
 Rigidbody:

@@ -25,6 +25,10 @@ public class TreeShrine : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioSource activatedSound;
 
+    [Header("GameComplete")]
+    public GameComplete gameComplete;
+    
+
     // Player inventory variable
     PlayerInventory playerInventory;
 
@@ -80,6 +84,8 @@ public class TreeShrine : MonoBehaviour
             activatedSound.Play();
 
             print("Game Complete");
+
+            gameComplete.gameIsComplete = true;
         }
     }
 }

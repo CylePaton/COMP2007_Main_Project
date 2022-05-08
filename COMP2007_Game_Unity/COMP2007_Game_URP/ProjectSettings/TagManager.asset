@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: InGameUI
+    uniqueID: 2227675169
+    locked: 0
+  - name: MenuUI
+    uniqueID: 3690602429
+    locked: 0
