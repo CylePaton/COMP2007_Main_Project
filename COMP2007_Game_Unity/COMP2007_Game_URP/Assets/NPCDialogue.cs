@@ -143,6 +143,12 @@ public class NPCDialogue : MonoBehaviour
         }
         if (dialogueNum == 3)
         {
+            Time.timeScale = 1f;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+            PauseMenu.gameIsPaused = false;
+
             SceneManager.LoadScene(2);
         }
        
