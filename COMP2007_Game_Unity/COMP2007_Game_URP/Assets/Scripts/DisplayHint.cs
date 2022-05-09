@@ -8,14 +8,27 @@ public class DisplayHint : MonoBehaviour
     bool showHint = false;
     public Image hint;
 
+    PlayerInventory playerInventory;
+
     private void OnTriggerEnter(Collider other)
     {
-        showHint = true;
+        playerInventory = other.GetComponentInParent<PlayerInventory>();
+
+        if(playerInventory != null)
+        {
+            showHint = true;
+        }
+        
     }
 
     private void OnTriggerExit(Collider other)
     {
-        showHint = false;
+        playerInventory = other.GetComponentInParent<PlayerInventory>();
+
+        if (playerInventory != null)
+        {
+            showHint = false;
+        }
     }
 
     // Update is called once per frame
