@@ -25,9 +25,14 @@ public class NPCDialogue : MonoBehaviour
     [SerializeField] AudioClip dialogue2;
     [SerializeField] AudioClip dialogue3;
 
+    [Header("Variables")]
+    [SerializeField] int toScene = 2;
+    [SerializeField] bool sendToScene = true;
+
+    //Variables
+    public bool dialogueStarted = false;
+    public int dialogueNum  = 0;
     bool showUI = false;
-    bool dialogueStarted = false;
-    int dialogueNum  = 0;
 
     bool sound1HasPlayed = false;
     bool sound2HasPlayed = false;
@@ -141,7 +146,24 @@ public class NPCDialogue : MonoBehaviour
                 sound3HasPlayed = true;
             }
         }
-        if (dialogueNum == 3)
+        if(dialogueNum == 3)
+        {
+
+            npcUI.gameObject.SetActive(false);
+            playerCam.gameObject.SetActive(true);
+            dialogueCam.gameObject.SetActive(false);
+
+
+            Time.timeScale = 1f;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+            PauseMenu.gameIsPaused = false;
+
+            dialogueStarted = false;
+
+        }
+        if (dialogueNum == 3 && sendToScene)
         {
             Time.timeScale = 1f;
             Cursor.lockState = CursorLockMode.Locked;
@@ -149,7 +171,9 @@ public class NPCDialogue : MonoBehaviour
 
             PauseMenu.gameIsPaused = false;
 
-            SceneManager.LoadScene(2);
+            dialogueStarted = false;
+
+            SceneManager.LoadScene(toScene);
         }
        
     }

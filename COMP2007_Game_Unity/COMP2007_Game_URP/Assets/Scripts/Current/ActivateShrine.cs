@@ -9,7 +9,7 @@ public class ActivateShrine : MonoBehaviour
 
     [Header("Shrine Variables")]
     [SerializeField] int shrineType = 0;
-    [SerializeField] int spiritsNeeded = 10;
+    [SerializeField] public int spiritsNeeded = 10;
 
     [Header("Game Objects")]
     [SerializeField] GameObject deactiveGem;
