@@ -17,11 +17,16 @@ public class NPCSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(NPC1.dialogueNum == 3 && NPC1.dialogueStarted == false)
+        /*if(NPC1.dialogueNum == 3 && NPC1.dialogueStarted == false)
         {
             NPC1.gameObject.SetActive(false);
             NPC2.gameObject.SetActive(true);
             
+        }*/
+        if(CompleteObjective.obj2Comp == true)
+        {
+            NPC1.gameObject.SetActive(false);
+            NPC2.gameObject.SetActive(true);
         }
     }
 }

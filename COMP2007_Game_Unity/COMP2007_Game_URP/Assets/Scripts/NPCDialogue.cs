@@ -34,12 +34,20 @@ public class NPCDialogue : MonoBehaviour
     public int dialogueNum  = 0;
     bool showUI = false;
 
+    //Check if sounds have played
     bool sound1HasPlayed = false;
     bool sound2HasPlayed = false;
     bool sound3HasPlayed = false;
 
+    //Should an objective be linked to this npc
+    public bool objectives = false;
+
+    //Which objective
+    public int objectiveNum = 0;
+
     PlayerInventory playerInventory;
 
+    //Setting dialogue objects to false
     private void Start()
     {
         text1.gameObject.SetActive(false);
@@ -47,6 +55,7 @@ public class NPCDialogue : MonoBehaviour
         text3.gameObject.SetActive(false);
     }
 
+    //When something enters the collider, check if its the player, if so allow the dialogue to be shown
     private void OnTriggerEnter(Collider other)
     {
         playerInventory = other.GetComponentInParent<PlayerInventory>();
@@ -58,6 +67,7 @@ public class NPCDialogue : MonoBehaviour
 
     }
 
+    //When something exits the collider, check if its the player, if so dont allow the dialogue to be shown
     private void OnTriggerExit(Collider other)
     {
         playerInventory = other.GetComponentInParent<PlayerInventory>();
@@ -78,18 +88,44 @@ public class NPCDialogue : MonoBehaviour
 
     public void NPCInteraction()
     {
+        //If the player is in the collider of the npc and they press E, then start the diaglogue
         if (showUI && Input.GetKeyDown(KeyCode.E))
         {
+            //Starting the talk animation
             animator.SetBool("IsTalking", true);
 
+            //Setting any objective linked to the npc
+            if (objectives)
+            {
+                if(objectiveNum == 0)
+                {
+                    CompleteObjective.obj0Comp = true;
+                }
+                if(objectiveNum == 1)
+                {
+                    CompleteObjective.obj1Comp = true;
+                }
+                if(objectiveNum == 2)
+                {
+                    CompleteObjective.obj2Comp = true;
+                }
+                if (objectiveNum == 3)
+                {
+                    CompleteObjective.obj3Comp = true;
+                }
+            }
+            
+            //Setting active any UI elements and changing the cam from the pov to the dialogue scene cam
             npcUI.gameObject.SetActive(true);
             playerCam.gameObject.SetActive(false);
             dialogueCam.gameObject.SetActive(true);
 
+            //Setting the game to a pause like state
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
+            //Setting the dialogue started so the audio doesnt player before the UI element appear
             dialogueStarted = true;
 
             PauseMenu.gameIsPaused = true;
@@ -98,6 +134,7 @@ public class NPCDialogue : MonoBehaviour
 
     public void DialogueOptions()
     {
+        //If the NPC is talking then play the talk animation, when they stop, go back to the idle animcation
         if (dialogue.isPlaying)
         {
             animator.SetBool("IsTalking", true);
@@ -107,6 +144,7 @@ public class NPCDialogue : MonoBehaviour
             animator.SetBool("IsTalking", false);
         }
 
+        //This code is responsible for diplating/playing the dialogue in the correct order when the next button is pressed
         if (dialogueNum == 0 && dialogueStarted)
         {
             text1.gameObject.SetActive(true);
@@ -114,6 +152,7 @@ public class NPCDialogue : MonoBehaviour
             text2.gameObject.SetActive(false);
             text3.gameObject.SetActive(false);
 
+            //If the sound hasnt played then play it, then make sure it doesnt play again
             if (!sound1HasPlayed)
             {
                 dialogue.PlayOneShot(dialogue1);
@@ -127,10 +166,12 @@ public class NPCDialogue : MonoBehaviour
             text1.gameObject.SetActive(false);
             text3.gameObject.SetActive(false);
 
+            //If the sound hasnt played then play it, then make sure it doesnt play again
             if (!sound2HasPlayed)
             {
                 dialogue.PlayOneShot(dialogue2);
                 sound2HasPlayed = true;
+
             }
         }
         if (dialogueNum == 2)
@@ -140,12 +181,15 @@ public class NPCDialogue : MonoBehaviour
             text1.gameObject.SetActive(false);
             text2.gameObject.SetActive(false);
 
+            //If the sound hasnt played then play it, then make sure it doesnt play again
             if (!sound3HasPlayed)
             {
                 dialogue.PlayOneShot(dialogue3);
                 sound3HasPlayed = true;
             }
         }
+
+        //This option will reset the game/player to the game state after the dialogue is finished
         if(dialogueNum == 3)
         {
 
@@ -163,6 +207,7 @@ public class NPCDialogue : MonoBehaviour
             dialogueStarted = false;
 
         }
+        //This option will start a new scene, which is used in the intro and tutorial
         if (dialogueNum == 3 && sendToScene)
         {
             Time.timeScale = 1f;
@@ -177,7 +222,7 @@ public class NPCDialogue : MonoBehaviour
         }
        
     }
-
+    //This code is for the next button to progress the dialogue
     public void NextDialogue()
     {
         dialogueNum += 1;

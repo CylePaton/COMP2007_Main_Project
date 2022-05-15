@@ -52,6 +52,9 @@ public class ActivateShrine : MonoBehaviour
 
                 activatedSound.Play();
                 shrineActive = true;
+                
+                CompleteObjective.obj2Comp = true;
+                
             }
 
             if (shrineType == 1 && playerInventory.numberOfBlue >= spiritsNeeded)
@@ -61,6 +64,7 @@ public class ActivateShrine : MonoBehaviour
 
                 activatedSound.Play();
                 shrineActive = true;
+
             }
 
             if (shrineType == 2 && playerInventory.numberOfYellow >= spiritsNeeded)
@@ -70,6 +74,7 @@ public class ActivateShrine : MonoBehaviour
 
                 activatedSound.Play();
                 shrineActive = true;
+
             }
         }
     }

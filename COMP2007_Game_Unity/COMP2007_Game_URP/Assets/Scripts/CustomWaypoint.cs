@@ -78,7 +78,7 @@ public class CustomWaypoint : MonoBehaviour
     {
         if (hideMarker)
         {
-            if (waypoint.markerVisited)
+            if (waypoint.markerVisited && markerVisited == false)
             {
                 img.gameObject.SetActive(true);
             }

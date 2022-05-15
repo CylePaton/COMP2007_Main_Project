@@ -84,9 +84,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2666816937637036796, guid: 5d6976fa86eec774dbe618b2464e1ad5, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2666816937637036796, guid: 5d6976fa86eec774dbe618b2464e1ad5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2afe7dd9867841449b4f674a5403a045, type: 2}
+    - target: {fileID: -2666816937637036796, guid: 5d6976fa86eec774dbe618b2464e1ad5, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 589d3acc58fc7c04e914f0a6686d7d57, type: 2}
     - target: {fileID: 919132149155446097, guid: 5d6976fa86eec774dbe618b2464e1ad5, type: 3}
       propertyPath: m_Name
       value: Archway
@@ -96,9 +104,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 2afe7dd9867841449b4f674a5403a045, type: 2}
     - target: {fileID: 5434738511272808605, guid: 5d6976fa86eec774dbe618b2464e1ad5, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5434738511272808605, guid: 5d6976fa86eec774dbe618b2464e1ad5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2afe7dd9867841449b4f674a5403a045, type: 2}
+    - target: {fileID: 5434738511272808605, guid: 5d6976fa86eec774dbe618b2464e1ad5, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 589d3acc58fc7c04e914f0a6686d7d57, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d6976fa86eec774dbe618b2464e1ad5, type: 3}
 --- !u!1 &123735640787428074 stripped
@@ -189,9 +205,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2666816937637036796, guid: 5d6976fa86eec774dbe618b2464e1ad5, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2666816937637036796, guid: 5d6976fa86eec774dbe618b2464e1ad5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2afe7dd9867841449b4f674a5403a045, type: 2}
+    - target: {fileID: -2666816937637036796, guid: 5d6976fa86eec774dbe618b2464e1ad5, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 589d3acc58fc7c04e914f0a6686d7d57, type: 2}
     - target: {fileID: 919132149155446097, guid: 5d6976fa86eec774dbe618b2464e1ad5, type: 3}
       propertyPath: m_Name
       value: Archway (1)
@@ -201,9 +225,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 2afe7dd9867841449b4f674a5403a045, type: 2}
     - target: {fileID: 5434738511272808605, guid: 5d6976fa86eec774dbe618b2464e1ad5, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5434738511272808605, guid: 5d6976fa86eec774dbe618b2464e1ad5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2afe7dd9867841449b4f674a5403a045, type: 2}
+    - target: {fileID: 5434738511272808605, guid: 5d6976fa86eec774dbe618b2464e1ad5, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 589d3acc58fc7c04e914f0a6686d7d57, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d6976fa86eec774dbe618b2464e1ad5, type: 3}
 --- !u!1 &123735639385243080 stripped
