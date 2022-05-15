@@ -16,8 +16,14 @@ public class GameComplete : MonoBehaviour
 
     void CompleteMenu()
     {
+        StartCoroutine(ShowFinalUI());
+    }
+
+    IEnumerator ShowFinalUI()
+    {
         if (gameIsComplete)
         {
+            yield return new WaitForSeconds(7);
             completeUI.SetActive(true);
             Time.timeScale = 0f;
         }

@@ -27,7 +27,9 @@ public class TreeShrine : MonoBehaviour
 
     [Header("GameComplete")]
     public GameComplete gameComplete;
-    
+
+    // Bool
+    public bool treeShrineActive = false;
 
     // Player inventory variable
     PlayerInventory playerInventory;
@@ -78,14 +80,14 @@ public class TreeShrine : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && canInteract & yellowShrine.shrineActive && greenShrine.shrineActive && blueShrine.shrineActive)
         {
+            treeShrineActive = true;
             MainGem.SetActive(false);
             MainGemActive.SetActive(true);
 
             activatedSound.Play();
-
-            print("Game Complete");
-
+            
             gameComplete.gameIsComplete = true;
+
         }
     }
 }
