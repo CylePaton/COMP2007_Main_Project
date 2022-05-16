@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 133347283e115d147a5fcce7f47a538f, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 4b4ff4ac0c3a0fa4ea883ce1fcc1dd2a, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.38810045, g: 0.72781575, b: 0.73249876, a: 1}
+  m_IndirectSpecularColor: {r: 0.1582322, g: 0.70697576, b: 0.97468966, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -385,11 +385,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285090612}
   m_LocalRotation: {x: -0, y: 0.7071067, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -0.00000011839, y: 2.664, z: 3.816}
-  m_LocalScale: {x: 4.80788, y: 1.66824, z: 138.97736}
+  m_LocalPosition: {x: 0, y: 2.485653, z: 6.963697}
+  m_LocalScale: {x: 8.773747, y: 3.0443184, z: 253.61537}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 5878394841923706126}
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &345669855
 PrefabInstance:
@@ -1981,11 +1981,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738721042}
   m_LocalRotation: {x: -0, y: 1, z: -0.000000021855694, w: 0}
-  m_LocalPosition: {x: -0.00000035331396, y: 2.6330528, z: 3.8104439}
-  m_LocalScale: {x: 13.61994, y: 13.61994, z: 13.61994}
+  m_LocalPosition: {x: 0, y: 2.4291785, z: 6.953558}
+  m_LocalScale: {x: 24.854595, y: 24.854595, z: 24.854595}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 5878394841923706126}
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2078367083
 GameObject:
@@ -3670,6 +3670,8 @@ Transform:
   - {fileID: 1212054088}
   - {fileID: 1272632610}
   - {fileID: 717573416}
+  - {fileID: 285090615}
+  - {fileID: 1738721045}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -78,6 +78,7 @@ public class TreeShrine : MonoBehaviour
             yellowGemActive.SetActive(true);
         }
 
+        //If all other shrines have been activated and the player is pressing E then activate this shrine and set the game to complete
         if (Input.GetKeyDown(KeyCode.E) && canInteract & yellowShrine.shrineActive && greenShrine.shrineActive && blueShrine.shrineActive)
         {
             treeShrineActive = true;

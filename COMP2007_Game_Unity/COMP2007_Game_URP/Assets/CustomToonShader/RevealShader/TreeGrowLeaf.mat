@@ -36,7 +36,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Clip_Threshold: -0.09999929
+    - _Clip_Threshold: 0.6
     - _clip_threshold: 0
     m_Colors:
     - Color_5183b3e1bf86429f9ea022e17be2876e: {r: 0.96470594, g: 0.6156863, b: 0.4784314, a: 0}

@@ -14,6 +14,7 @@ public class CatchSpirit : MonoBehaviour
     private bool isRotatingRight = false;
     private bool isWalking = false;
 
+    //Set if the spirit can move
     public bool hasMovement = false;
 
     Rigidbody rb;
@@ -30,10 +31,9 @@ public class CatchSpirit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (hasMovement)
         {
-            //AI Movement, which randomly choose wether to move a random amount or rotate a random amount
+            //AI Movement, which randomly chooses wether to move a random amount or rotate a random amount
             if(isWandering == false)
             {
                 StartCoroutine(Wander());
@@ -59,7 +59,6 @@ public class CatchSpirit : MonoBehaviour
 
     IEnumerator Wander()
     {
-
         //Getting a random range for each movement variable
         int rotationTime = Random.Range(1, 3);
         int rotationWait = Random.Range(1, 3);

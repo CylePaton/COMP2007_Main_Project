@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class CatchAnimation : MonoBehaviour
 {
+    //References
     public Animator animator;
-    ParticleSystem ps;
     public AudioSource magicFX;
+    ParticleSystem ps;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Getting particle system
         ps = GameObject.Find("MagicExplosion").GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //If the player presses the left mouse button then start a coroutine (so the effects activate at the peak of the animation)
         if (Input.GetMouseButtonDown(0))
         {
             animator.SetBool("UsingStaff", true);
@@ -28,6 +31,7 @@ public class CatchAnimation : MonoBehaviour
         }
     }
 
+    //Particle and sound effects
     public IEnumerator playParticle()
     {
         yield return new WaitForSeconds(0.3f);

@@ -15,20 +15,8 @@ public class InventoryUI : MonoBehaviour
     public ActivateShrine waterShrine;
     public ActivateShrine sunShrine;
 
-
-
     //Getting player inventory
     public PlayerInventory playerInventory;
-
-    //Event system isnt hooked up so its not being called at all
-
-    public void updateItemText(PlayerInventory playerInventory)
-    {
-        //Setting the text objects to the inventory values
-        yellowText.text = playerInventory.numberOfYellow.ToString();
-        blueText.text = playerInventory.numberOfBlue.ToString();
-        greenText.text = playerInventory.numberOfGreen.ToString();
-    }
 
     //Setting UI text to number in inventory
     private void Update()
